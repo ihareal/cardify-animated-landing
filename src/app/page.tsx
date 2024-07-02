@@ -34,6 +34,7 @@ export default function Home() {
     <main className="bg-black relative m-auto overflow-hidden flex min-h-screen flex-col items-center justify-between bg-[url('/images/bg.png')] bg-no-repeat bg-cover">
       <div className='relative w-full min-h-screen flex flex-col items-center justify-center'>
         <Image
+          unoptimized
           width={100}
           height={100}
           src={Arrow}
@@ -41,6 +42,7 @@ export default function Home() {
           className='z-50 absolute top-[20%] cursor-pointer'
         />
         <Image
+          unoptimized
           width={500}
           height={500}
           src={ScrewRU}
@@ -48,6 +50,7 @@ export default function Home() {
           className='cursor-pointer z-20'
         />
         <Image
+          unoptimized
           width={520}
           height={520}
           src={ShapesEllipses}
@@ -55,6 +58,7 @@ export default function Home() {
           className='absolute top-[20.5%] cursor-pointer z-30'
         />
         <Image
+          unoptimized
           width={520}
           height={520}
           src={BaseWheel}
@@ -62,6 +66,7 @@ export default function Home() {
           className='absolute top-[20.5%] cursor-pointer'
         />
         <Image
+          unoptimized
           width={550}
           height={550}
           src={SpinGif}
@@ -70,6 +75,7 @@ export default function Home() {
           className='z-50 absolute top-50 cursor-pointer'
         />
         <Image
+          unoptimized
           width={1200}
           height={1200}
           src={ElectricityGif}
