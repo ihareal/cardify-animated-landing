@@ -11,10 +11,10 @@ import Shadow from '../../public/images/shadow.png';
 import BaseWheel from '../../public/images/base-wheel.png';
 import GuitarImage from '../../public/images/Guitar.png';
 
-import DocGif from '../../public/animations/gifs/doc.gif';
-import FireworksGif from '../../public/animations/gifs/fireworks.gif';
-import SpinGif from '../../public/animations/gifs/Mid.gif';
-import ElectricityGif from '../../public/animations/gifs/Electricity.gif';
+import DocGif from '../../public/animations/gif/doc.gif';
+import FireworksGif from '../../public/animations/gif/fireworks.gif';
+import SpinGif from '../../public/animations/gif/Mid.gif';
+import ElectricityGif from '../../public/animations/gif/Electricity.gif';
 
 export default function Home() {
   const [lang, setLang] = useState<'en' | 'ru'>('ru');
