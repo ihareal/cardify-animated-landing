@@ -11,10 +11,10 @@ import Shadow from '../../public/images/shadow.png';
 import BaseWheel from '../../public/images/base-wheel.png';
 import GuitarImage from '../../public/images/Guitar.png';
 
-import DocGif from '../../public/animations/gif/doc.gif';
-import FireworksGif from '../../public/animations/gif/fireworks.gif';
-import SpinGif from '../../public/animations/gif/Mid.gif';
-import ElectricityGif from '../../public/animations/gif/Electricity.gif';
+// import DocGif from '../../public/animations/gif/doc.gif';
+// import FireworksGif from '../../public/animations/gif/fireworks.gif';
+// import SpinGif from '../../public/animations/gif/Mid.gif';
+// import ElectricityGif from '../../public/animations/gif/Electricity.gif';
 
 export default function Home() {
   const [lang, setLang] = useState<'en' | 'ru'>('ru');
@@ -65,7 +65,7 @@ export default function Home() {
           alt='Base Wheel'
           className='absolute top-[20.5%] cursor-pointer'
         />
-        <Image
+        {/* <Image
           unoptimized
           width={550}
           height={550}
@@ -81,7 +81,7 @@ export default function Home() {
           src={ElectricityGif}
           alt='Electricity'
           className='absolute top-0'
-        />
+        /> */}
       </div>
       <Image
         width={400}
@@ -89,7 +89,7 @@ export default function Home() {
         alt='Guitar'
         className='absolute bottom-[-2%] right-[-2%]'
       />
-      <Image
+      {/* <Image
         src={FireworksGif}
         alt='Fireworks'
         className='absolute bottom-0 right-[5%]'
@@ -99,7 +99,7 @@ export default function Home() {
         src={DocGif}
         alt='Doc'
         className='absolute bottom-0 left-[-5%]'
-      />
+      /> */}
     </main>
   );
 }
