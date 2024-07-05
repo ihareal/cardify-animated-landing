@@ -2,104 +2,152 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
-import ScrewRU from '../../public/images/screw-ru.png';
-import ScrewEN from '../../public/images/screw-en.png';
-import Arrow from '../../public/images/Arrow.png';
-import ShapesEllipses from '../../public/images/ShapesEllipses.png';
-import Shadow from '../../public/images/shadow.png';
-import BaseWheel from '../../public/images/base-wheel.png';
-import GuitarImage from '../../public/images/Guitar.png';
+import Logo from '@/assets/images/logo.svg';
+import ScrewRU from '@/assets/images/screw-ru.png';
+import ScrewEN from '@/assets/images/screw-en.png';
+import Arrow from '@/assets/images/Arrow.png';
+import ShapesEllipses from '@/assets/images/ShapesEllipses.png';
+import Shadow from '@/assets/images/shadow.png';
+import BaseWheel from '@/assets/images/base-wheel.png';
+import Guitaer from '@/assets/images/Guitar.png';
 
-// import DocGif from '../../public/animations/gif/doc.gif';
-// import FireworksGif from '../../public/animations/gif/fireworks.gif';
-// import SpinGif from '../../public/animations/gif/Mid.gif';
-// import ElectricityGif from '../../public/animations/gif/Electricity.gif';
+import BTCSvg from '@/assets/images/BTC.svg';
+import ETHSvg from '@/assets/images/ETH.svg';
+import LTCSvg from '@/assets/images/LTC.svg';
+import TONSvg from '@/assets/images/TON.svg';
+import TetherSVG from '@/assets/images/Tether.svg';
+
+import DocGif from '@/assets/animations/gif/doc.gif';
+import FireworksGif from '@/assets/animations/gif/fireworks.gif';
+import SpinGif from '@/assets/animations/gif/Mid.gif';
+
+import LottieElectricity from '@/assets/Electricity.json';
+import clsx from 'clsx';
+import Modal from './components/Modal';
+
+const LottiePlayer = dynamic(async () => {
+  return (await import('@/app/components/LottiePlayer')).LottiePlayer;
+});
 
 export default function Home() {
   const [lang, setLang] = useState<'en' | 'ru'>('ru');
   const [spin, setSpin] = useState<boolean>(false);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+
+  const detectLang = () => {
+    setLang('en');
+
+    console.log(lang);
+  };
 
   const handleSpin = () => {
     setSpin(true);
 
-    const spinTimeoutID = setTimeout(() => {
+    setTimeout(() => {
       setSpin(false);
     }, 3000);
 
-    clearInterval(spinTimeoutID);
+    setTimeout(() => {
+      setModalOpen(true);
+    }, 4000);
   };
 
   return (
-    <main className="bg-black relative m-auto overflow-hidden flex min-h-screen flex-col items-center justify-between bg-[url('/images/bg.png')] bg-no-repeat bg-cover">
-      <div className='relative w-full min-h-screen flex flex-col items-center justify-center'>
-        <Image
-          unoptimized
-          width={100}
-          height={100}
-          src={Arrow}
-          alt='Arrow'
-          className='z-50 absolute top-[20%] cursor-pointer'
-        />
-        <Image
-          unoptimized
-          width={500}
-          height={500}
-          src={ScrewRU}
-          alt='Screw'
-          className='cursor-pointer z-20'
-        />
-        <Image
-          unoptimized
-          width={520}
-          height={520}
-          src={ShapesEllipses}
-          alt='Shapes Ellipses'
-          className='absolute top-[20.5%] cursor-pointer z-30'
-        />
-        <Image
-          unoptimized
-          width={520}
-          height={520}
-          src={BaseWheel}
-          alt='Base Wheel'
-          className='absolute top-[20.5%] cursor-pointer'
-        />
-        {/* <Image
-          unoptimized
-          width={550}
-          height={550}
-          src={SpinGif}
-          alt='Spin'
-          onClick={() => handleSpin()}
-          className='z-50 absolute top-50 cursor-pointer'
-        />
-        <Image
-          unoptimized
-          width={1200}
-          height={1200}
-          src={ElectricityGif}
-          alt='Electricity'
-          className='absolute top-0'
-        /> */}
-      </div>
+    <div className="w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden  flex-col items-center justify-between bg-[url('/images/bg.png')] bg-no-repeat bg-cover">
+      {modalOpen && <Modal />}
+
+      <header className='z-10 w-full flex flex-col items-center justify-center'>
+        <Image src={Logo} alt='Logo' className='mt-5' />
+        <h1 className='flex flex-col items-center justify-start text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5'>
+          <span>ПРИВЕТСТВЕННЫЙ БОНУС ДО </span>
+          <span>2500$ ВСЕМ НОВЫМ ИГРОКАМ!</span>
+        </h1>
+      </header>
+
+      <LottiePlayer
+        className='absolute left-[20%] bottom-0 w-[1000px] h-[1000px] select-none pointer-events-none'
+        src={LottieElectricity}
+        loop={true}
+        autoplay={true}
+      />
+      <main className='relative m-auto mt-5 overflow-hidden flex flex-col items-center justify-between'>
+        <div className='relative w-full flex flex-col items-center justify-start'>
+          <Image
+            unoptimized
+            width={100}
+            height={100}
+            src={Arrow}
+            alt='Arrow'
+            className='z-50 absolute top-[-2.5%] cursor-pointer'
+          />
+          <Image
+            unoptimized
+            width={500}
+            height={500}
+            src={ScrewRU}
+            alt='Screw'
+            className={clsx(
+              'cursor-pointer top-0 z-20',
+              spin && 'animate-spin transition-all',
+            )}
+          />
+          <Image
+            unoptimized
+            width={520}
+            height={520}
+            src={ShapesEllipses}
+            alt='Shapes Ellipses'
+            className='absolute top-0 cursor-pointer z-30'
+          />
+          <Image
+            unoptimized
+            width={520}
+            height={520}
+            src={BaseWheel}
+            alt='Base Wheel'
+            className='absolute top-0 cursor-pointer'
+          />
+          <Image
+            unoptimized
+            width={550}
+            height={550}
+            src={SpinGif}
+            alt='Spin'
+            onClick={() => handleSpin()}
+            className='z-30 absolute top-0 cursor-pointer'
+          />
+        </div>
+      </main>
+      <footer className='w-full flex-row flex items-center justify-center gap-5  pb-5'>
+        <Image src={BTCSvg} alt='BTC' />
+        <Image src={ETHSvg} alt='ETH' />
+        <Image src={LTCSvg} alt='LTCSvg' />
+        <Image src={TONSvg} alt='TONSvg' />
+        <Image src={TetherSVG} alt='TetherSVG' />
+      </footer>
       <Image
         width={400}
-        src={GuitarImage}
+        src={Guitaer}
         alt='Guitar'
         className='absolute bottom-[-2%] right-[-2%]'
       />
-      {/* <Image
-        src={FireworksGif}
-        alt='Fireworks'
-        className='absolute bottom-0 right-[5%]'
-      />
+      {modalOpen && (
+        <Image
+          src={FireworksGif}
+          alt='Fireworks'
+          className='z-[101] absolute bottom-0 right-[5%]'
+          unoptimized
+        />
+      )}
       <Image
         width={1500}
         src={DocGif}
         alt='Doc'
         className='absolute bottom-0 left-[-5%]'
-      /> */}
-    </main>
+        unoptimized
+      />
+    </div>
   );
 }
