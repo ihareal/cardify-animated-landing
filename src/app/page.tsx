@@ -6,10 +6,8 @@ import dynamic from 'next/dynamic';
 
 import Logo from '@/assets/images/logo.svg';
 import ScrewRU from '@/assets/images/screw-ru.png';
-import ScrewEN from '@/assets/images/screw-en.png';
 import Arrow from '@/assets/images/Arrow.png';
 import ShapesEllipses from '@/assets/images/ShapesEllipses.png';
-import Shadow from '@/assets/images/shadow.png';
 import BaseWheel from '@/assets/images/base-wheel.png';
 import Guitaer from '@/assets/images/Guitar.png';
 
@@ -19,11 +17,11 @@ import LTCSvg from '@/assets/images/LTC.svg';
 import TONSvg from '@/assets/images/TON.svg';
 import TetherSVG from '@/assets/images/Tether.svg';
 
-import DocGif from '@/assets/animations/gif/doc.gif';
-import FireworksGif from '@/assets/animations/gif/fireworks.gif';
-import SpinGif from '@/assets/animations/gif/Mid.gif';
-
 import LottieElectricity from '@/assets/Electricity.json';
+import Spin from '@/assets/animations/lottie/Spin.json';
+import FirstDragon from '@/assets/animations/lottie/FirstDragon.json';
+import SecondDragon from '@/assets/animations/lottie/SecondDragon.json';
+import Professor from '@/assets/animations/lottie/Proffesor.json';
 import clsx from 'clsx';
 import Modal from './components/Modal';
 
@@ -109,14 +107,11 @@ export default function Home() {
             alt='Base Wheel'
             className='absolute top-0 cursor-pointer'
           />
-          <Image
-            unoptimized
-            width={550}
-            height={550}
-            src={SpinGif}
-            alt='Spin'
-            onClick={() => handleSpin()}
+          <LottiePlayer
             className='z-30 absolute top-0 cursor-pointer'
+            src={Spin}
+            loop={true}
+            autoplay={true}
           />
         </div>
       </main>
@@ -133,20 +128,31 @@ export default function Home() {
         alt='Guitar'
         className='absolute bottom-[-2%] right-[-2%]'
       />
-      {modalOpen && (
+      {/* {modalOpen && (
         <Image
           src={FireworksGif}
           alt='Fireworks'
           className='z-[101] absolute bottom-0 right-[5%]'
           unoptimized
         />
-      )}
-      <Image
-        width={1500}
-        src={DocGif}
-        alt='Doc'
-        className='absolute bottom-0 left-[-5%]'
-        unoptimized
+      )} */}
+      <LottiePlayer
+        className='z-30 absolute top-0 cursor-pointer'
+        src={FirstDragon}
+        loop={true}
+        autoplay={true}
+      />
+      <LottiePlayer
+        className='z-30 absolute top-0 cursor-pointer'
+        src={SecondDragon}
+        loop={true}
+        autoplay={true}
+      />
+      <LottiePlayer
+        className='w-[650px] absolute bottom-0 left-[-5%]'
+        src={Professor}
+        loop={true}
+        autoplay={true}
       />
     </div>
   );
