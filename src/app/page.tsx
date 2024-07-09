@@ -9,6 +9,7 @@ import ScrewRU from '@/assets/images/screw-ru.png';
 import Arrow from '@/assets/images/Arrow.png';
 import ShapesEllipses from '@/assets/images/ShapesEllipses.png';
 import BaseWheel from '@/assets/images/base-wheel.png';
+import Doc from '@/assets/images/doc.png';
 import Guitaer from '@/assets/images/Guitar.png';
 // Tokens if Footer
 import BTCSvg from '@/assets/images/BTC.svg';
@@ -19,9 +20,9 @@ import TetherSVG from '@/assets/images/Tether.svg';
 
 import Electricity from '@/assets/animations/lottie/Electricity.json';
 import Spin from '@/assets/animations/lottie/Spin.json';
+import Fireworks from '@/assets/animations/lottie/Fireworks.json';
 import FirstDragon from '@/assets/animations/lottie/FirstDragon.json';
 import SecondDragon from '@/assets/animations/lottie/SecondDragon.json';
-import Professor from '@/assets/animations/lottie/Proffesor.json';
 
 import clsx from 'clsx';
 import Modal from './components/Modal';
@@ -50,7 +51,7 @@ export default function Home() {
 
     setTimeout(() => {
       setModalOpen(true);
-    }, 4000);
+    }, 3500);
   };
 
   return (
@@ -132,14 +133,14 @@ export default function Home() {
         alt='Guitar'
         className='absolute bottom-[-2%] right-[-2%]'
       />
-      {/* {modalOpen && (
-        <Image
-          src={FireworksGif}
-          alt='Fireworks'
-          className='z-[101] absolute bottom-0 right-[5%]'
-          unoptimized
+      {modalOpen && (
+        <LottiePlayer
+          className='z-[101] absolute bottom-[-10%] right-[35%]'
+          src={Fireworks}
+          loop={true}
+          autoplay={true}
         />
-      )} */}
+      )}
       <LottiePlayer
         className='z-30 absolute top-0 right-0 cursor-pointer'
         src={FirstDragon}
@@ -152,11 +153,10 @@ export default function Home() {
         loop={true}
         autoplay={true}
       />
-      <LottiePlayer
+      <Image
         className='w-[650px] absolute bottom-0 left-[-5%]'
-        src={Professor}
-        loop={true}
-        autoplay={true}
+        src={Doc}
+        alt='Doc'
       />
     </div>
   );
