@@ -95,6 +95,12 @@ export default function Home() {
               spin && 'animate-spin transition-all',
             )}
           />
+          <LottiePlayer
+            className='z-30 absolute top-[125px] left-[125px] cursor-pointer'
+            src={Spin}
+            loop={true}
+            autoplay={true}
+          />
           <Image
             unoptimized
             width={520}
@@ -110,12 +116,6 @@ export default function Home() {
             src={BaseWheel}
             alt='Base Wheel'
             className='absolute top-0 cursor-pointer'
-          />
-          <LottiePlayer
-            className='z-30 absolute top-0 cursor-pointer'
-            src={Spin}
-            loop={true}
-            autoplay={true}
           />
         </div>
       </main>
@@ -141,13 +141,13 @@ export default function Home() {
         />
       )} */}
       <LottiePlayer
-        className='z-30 absolute top-0 cursor-pointer'
+        className='z-30 absolute top-0 right-0 cursor-pointer'
         src={FirstDragon}
         loop={true}
         autoplay={true}
       />
       <LottiePlayer
-        className='z-30 absolute top-0 cursor-pointer'
+        className='z-30 absolute top-0 left-0 cursor-pointer'
         src={SecondDragon}
         loop={true}
         autoplay={true}
