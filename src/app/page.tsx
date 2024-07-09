@@ -10,18 +10,19 @@ import Arrow from '@/assets/images/Arrow.png';
 import ShapesEllipses from '@/assets/images/ShapesEllipses.png';
 import BaseWheel from '@/assets/images/base-wheel.png';
 import Guitaer from '@/assets/images/Guitar.png';
-
+// Tokens if Footer
 import BTCSvg from '@/assets/images/BTC.svg';
 import ETHSvg from '@/assets/images/ETH.svg';
 import LTCSvg from '@/assets/images/LTC.svg';
 import TONSvg from '@/assets/images/TON.svg';
 import TetherSVG from '@/assets/images/Tether.svg';
 
-import LottieElectricity from '@/assets/Electricity.json';
+import Electricity from '@/assets/animations/lottie/Electricity.json';
 import Spin from '@/assets/animations/lottie/Spin.json';
 import FirstDragon from '@/assets/animations/lottie/FirstDragon.json';
 import SecondDragon from '@/assets/animations/lottie/SecondDragon.json';
 import Professor from '@/assets/animations/lottie/Proffesor.json';
+
 import clsx from 'clsx';
 import Modal from './components/Modal';
 
@@ -66,12 +67,15 @@ export default function Home() {
 
       <LottiePlayer
         className='absolute left-[20%] bottom-0 w-[1000px] h-[1000px] select-none pointer-events-none'
-        src={LottieElectricity}
+        src={Electricity}
         loop={true}
         autoplay={true}
       />
       <main className='relative m-auto mt-5 overflow-hidden flex flex-col items-center justify-between'>
-        <div className='relative w-full flex flex-col items-center justify-start'>
+        <div
+          className='relative w-full flex flex-col items-center justify-start'
+          onClick={handleSpin}
+        >
           <Image
             unoptimized
             width={100}
