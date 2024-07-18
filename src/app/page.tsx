@@ -122,7 +122,7 @@ export default function Home() {
           />
         </div>
       </main>
-      <footer className='w-full flex-row pointer-events-none flex items-center justify-center gap-5 pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:fixed max-md:bottom-0'>
+      <footer className='w-full flex-row pointer-events-none flex items-center justify-center gap-[11.72px] pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:fixed max-md:bottom-0'>
         <Image src={ETHSvg} className='pointer-events-none' alt='ETH' />
         <Image src={LTCSvg} className='pointer-events-none' alt='LTCSvg' />
         <Image src={BTCSvg} className='pointer-events-none' alt='BTC' />
@@ -142,7 +142,7 @@ export default function Home() {
       />
       {modalOpen && (
         <LottiePlayer
-          className='z-[101] absolute bottom-[30%] right-[35%] max-md:right-[-40%]'
+          className='z-[101] absolute bottom-[25%] right-[32%] max-md:right-[-40%]'
           src={Fireworks}
           loop={true}
           autoplay={true}
@@ -155,7 +155,7 @@ export default function Home() {
         autoplay={true}
       />
       <LottiePlayer
-        className='z-30 w-[206.19px] h-[206.19px] absolute top-[65px] right-[82.53px] max-md:right-[0%] max-md:top-[17%]'
+        className='z-30 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:right-[0%] max-md:top-[17%]'
         src={SecondDragon}
         loop={true}
         autoplay={true}
