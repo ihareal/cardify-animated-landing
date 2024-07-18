@@ -11,6 +11,7 @@ import ShapesEllipses from '@/assets/images/ShapesEllipses.png';
 import BaseWheel from '@/assets/images/base-wheel.png';
 import Doc from '@/assets/images/doc.png';
 import Guitaer from '@/assets/images/Guitar.png';
+import Electricity from '@/assets/images/Electricity.png';
 
 // Tokens if Footer
 import BTCSvg from '@/assets/images/BTC.svg';
@@ -19,7 +20,6 @@ import LTCSvg from '@/assets/images/LTC.svg';
 import TONSvg from '@/assets/images/TON.svg';
 import TetherSVG from '@/assets/images/Tether.svg';
 
-import Electricity from '@/assets/animations/lottie/Electricity.json';
 import Spin from '@/assets/animations/lottie/Spin.json';
 import Fireworks from '@/assets/animations/lottie/Fireworks.json';
 import FirstDragon from '@/assets/animations/lottie/FirstDragon.json';
@@ -67,11 +67,10 @@ export default function Home() {
         </div>
       </header>
       <main className='relative m-auto mt-5 flex flex-col items-center justify-between max-md:justify-center max-md:m-0'>
-        <LottiePlayer
-          className='absolute left-[-50%] top-[-60%] w-[1000px] h-[1000px] select-none pointer-events-none max-md:left-[-35%] max-md:w-[450px] max-md:h-[450px] max-md:top-[-45%] '
+        <Image
+          className='absolute max-w-none left-[-150px] top-[-100px] select-none pointer-events-none max-md:left-[-25%] max-md:w-[400px] max-md:h-[400px] max-md:top-[-15%] animate-spin-slow duration-[90000ms]'
           src={Electricity}
-          loop={true}
-          autoplay={true}
+          alt='Electricity'
         />
         <div
           className='relative w-full flex flex-col items-center justify-start max-md:justify-center max-md:h-full'
@@ -135,7 +134,7 @@ export default function Home() {
       />
       {modalOpen && (
         <LottiePlayer
-          className='z-[101] absolute bottom-[-10%] right-[35%] max-md:right-[-40%]'
+          className='z-[101] absolute bottom-[30%] right-[35%] max-md:right-[-40%]'
           src={Fireworks}
           loop={true}
           autoplay={true}
