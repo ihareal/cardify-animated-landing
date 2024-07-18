@@ -10,7 +10,7 @@ import Arrow from '@/assets/images/Arrow.png';
 import ShapesEllipses from '@/assets/images/ShapesEllipses.png';
 import BaseWheel from '@/assets/images/base-wheel.png';
 import Doc from '@/assets/images/doc.png';
-import Guitaer from '@/assets/images/Guitar.png';
+import Guitar from '@/assets/images/Guitar.png';
 import Electricity from '@/assets/images/Electricity.png';
 
 // Tokens if Footer
@@ -66,9 +66,14 @@ export default function Home() {
           <p className='max-md:w-70'>ДО 2500$ ВСЕМ НОВЫМ ИГРОКАМ!</p>
         </div>
       </header>
-      <main className='relative m-auto mt-5 flex flex-col items-center justify-between max-md:justify-center max-md:m-0'>
+      <main className='relative m-auto mt-16 flex flex-col items-center justify-between max-md:justify-center max-md:m-0'>
         <Image
-          className='absolute max-w-none left-[-140px] top-[-150px] select-none pointer-events-none max-md:left-[-25%] max-md:w-[400px] max-md:h-[400px] max-md:top-[-15%] animate-spin-slow duration-[90000ms]'
+          className='absolute max-w-none left-[-200px] top-[-150px] select-none pointer-events-none max-md:left-[-25%] max-md:w-[400px] max-md:h-[400px] max-md:top-[-15%] animate-spin-slow duration-[90000ms]'
+          src={Electricity}
+          alt='Electricity'
+        />
+        <Image
+          className='absolute max-w-none left-[-200px] top-[-150px] select-none pointer-events-none max-md:left-[-25%] max-md:w-[400px] max-md:h-[400px] max-md:top-[-15%] animate-spin-slow duration-[90000ms]'
           src={Electricity}
           alt='Electricity'
         />
@@ -92,7 +97,7 @@ export default function Home() {
             alt='Screw'
             className={clsx(
               'pointer-events-none top-0 z-20 max-md:w-[272px] max-md:h-[272px]',
-              spin && 'animate-spin transition-all',
+              spin && 'animate-spin',
             )}
           />
           <LottiePlayer
@@ -129,10 +134,11 @@ export default function Home() {
         <Image src={TONSvg} className='pointer-events-none' alt='TONSvg' />
       </footer>
       <Image
-        width={400}
-        src={Guitaer}
+        width={478}
+        height={597}
+        src={Guitar}
         alt='Guitar'
-        className='absolute bottom-[-2%] right-[-2%]  pointer-events-none max-md:hidden'
+        className='absolute bottom-[-18%] right-[-6%] pointer-events-none max-md:hidden'
       />
       {modalOpen && (
         <LottiePlayer
@@ -143,19 +149,19 @@ export default function Home() {
         />
       )}
       <LottiePlayer
-        className='z-30 absolute top-0 left-0 max-md:left-[0%] max-md:top-[20%]'
+        className='z-30 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:left-[0%] max-md:top-[20%]'
         src={FirstDragon}
         loop={true}
         autoplay={true}
       />
       <LottiePlayer
-        className='z-30 absolute top-0 right-0 max-md:right-[0%] max-md:top-[17%]'
+        className='z-30 w-[206.19px] h-[206.19px] absolute top-[65px] right-[82.53px] max-md:right-[0%] max-md:top-[17%]'
         src={SecondDragon}
         loop={true}
         autoplay={true}
       />
       <Image
-        className='w-[650px] absolute bottom-0 left-[-5%] pointer-events-none max-md:hidden'
+        className='w-[510px] absolute bottom-0 left-[-5%] pointer-events-none max-md:hidden'
         src={Doc}
         alt='Doc'
       />
