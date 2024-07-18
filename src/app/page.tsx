@@ -56,19 +56,19 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden  flex-col items-center justify-between bg-[url('/images/bg.png')] bg-no-repeat bg-cover max-md:bg-center max-md:justify-between">
+    <div className="w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden  flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between">
       {modalOpen && <Modal />}
 
       <header className='z-10 w-full flex flex-col items-center justify-center'>
         <Image src={Logo} alt='Logo' className='mt-5 pointer-events-none' />
-        <div className='flex flex-col items-center justify-start text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[40%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'>
+        <div className='flex flex-col items-center justify-start text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'>
           <p>ПРИВЕТСТВЕННЫЙ БОНУС</p>
           <p className='max-md:w-70'>ДО 2500$ ВСЕМ НОВЫМ ИГРОКАМ!</p>
         </div>
       </header>
       <main className='relative m-auto mt-5 flex flex-col items-center justify-between max-md:justify-center max-md:m-0'>
         <Image
-          className='absolute max-w-none left-[-150px] top-[-100px] select-none pointer-events-none max-md:left-[-25%] max-md:w-[400px] max-md:h-[400px] max-md:top-[-15%] animate-spin-slow duration-[90000ms]'
+          className='absolute max-w-none left-[-140px] top-[-150px] select-none pointer-events-none max-md:left-[-25%] max-md:w-[400px] max-md:h-[400px] max-md:top-[-15%] animate-spin-slow duration-[90000ms]'
           src={Electricity}
           alt='Electricity'
         />
@@ -82,40 +82,38 @@ export default function Home() {
             height={100}
             src={Arrow}
             alt='Arrow'
-            className='z-50 absolute top-[-2.5%] pointer-events-none cursor-pointer max-md:top-[-5%]'
+            className='z-50 absolute top-[-8%] pointer-events-none cursor-pointer max-md:top-[-5%]'
           />
           <Image
             unoptimized
-            width={500}
-            height={500}
+            width={390}
+            height={390}
             src={ScrewRU}
             alt='Screw'
             className={clsx(
-              'cursor-pointer pointer-events-none top-0 z-20 max-md:w-[272px] max-md:h-[272px]',
+              'pointer-events-none top-0 z-20 max-md:w-[272px] max-md:h-[272px]',
               spin && 'animate-spin transition-all',
             )}
           />
           <LottiePlayer
-            className='z-30 absolute pointer-events-none top-[125px] left-[125px] cursor-pointer max-md:w-[120px] max-md:top-[77.5px] max-md:left-[77.5px]'
+            className='z-50 w-[150px] h-[150px] absolute top-[120px] left-[120px] cursor-pointer max-md:w-[120px] max-md:top-[77.5px] max-md:left-[77.5px]'
             src={Spin}
             loop={true}
             autoplay={true}
           />
           <Image
             unoptimized
-            width={520}
-            height={520}
+            width={200}
+            height={200}
             src={ShapesEllipses}
             alt='Shapes Ellipses'
-            className='absolute top-0 pointer-events-none z-30'
+            className='absolute top-[100px] pointer-events-none z-30'
           />
           <Image
             unoptimized
-            width={520}
-            height={520}
             src={BaseWheel}
             alt='Base Wheel'
-            className='absolute top-0 cursor-pointer pointer-events-none max-md:w-[272px] max-md:h-[272px]'
+            className='absolute min-w-[475px] min-h-[475px] top-[-43px] pointer-events-none max-md:w-[272px] max-md:h-[272px]'
           />
         </div>
       </main>
