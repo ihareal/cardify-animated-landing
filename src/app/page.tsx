@@ -96,7 +96,7 @@ export default function Home() {
             )}
           />
           <LottiePlayer
-            className='z-30 absolute top-[125px] left-[125px] cursor-pointer max-md:w-[120px] max-md:top-[77.5px] max-md:left-[77.5px]'
+            className='z-30 absolute pointer-events-none top-[125px] left-[125px] cursor-pointer max-md:w-[120px] max-md:top-[77.5px] max-md:left-[77.5px]'
             src={Spin}
             loop={true}
             autoplay={true}
@@ -107,7 +107,7 @@ export default function Home() {
             height={520}
             src={ShapesEllipses}
             alt='Shapes Ellipses'
-            className='absolute top-0 pointer-events-none cursor-pointer z-30'
+            className='absolute top-0 pointer-events-none z-30'
           />
           <Image
             unoptimized
@@ -119,7 +119,7 @@ export default function Home() {
           />
         </div>
       </main>
-      <footer className='w-full flex-row flex items-center justify-center gap-5 pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:fixed max-md:bottom-0'>
+      <footer className='w-full flex-row pointer-events-none flex items-center justify-center gap-5 pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:fixed max-md:bottom-0'>
         <Image src={ETHSvg} className='pointer-events-none' alt='ETH' />
         <Image src={LTCSvg} className='pointer-events-none' alt='LTCSvg' />
         <Image src={BTCSvg} className='pointer-events-none' alt='BTC' />
@@ -145,13 +145,13 @@ export default function Home() {
         />
       )}
       <LottiePlayer
-        className='z-30 absolute top-0 left-0 cursor-pointer max-md:left-[0%] max-md:top-[20%]'
+        className='z-30 absolute top-0 left-0 max-md:left-[0%] max-md:top-[20%]'
         src={FirstDragon}
         loop={true}
         autoplay={true}
       />
       <LottiePlayer
-        className='z-30 absolute top-0 right-0 cursor-pointer max-md:right-[0%] max-md:top-[17%]'
+        className='z-30 absolute top-0 right-0 max-md:right-[0%] max-md:top-[17%]'
         src={SecondDragon}
         loop={true}
         autoplay={true}
