@@ -63,7 +63,7 @@ export default function Home() {
         <Image src={Logo} alt='Logo' className='mt-5 pointer-events-none' />
         <div className='flex flex-col items-center justify-start text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'>
           <p>ПРИВЕТСТВЕННЫЙ БОНУС</p>
-          <p className='max-md:w-70'>ДО 2500$ ВСЕМ НОВЫМ ИГРОКАМ!</p>
+          <p className='max-md:w-70'>ДО 5000$ ВСЕМ НОВЫМ ИГРОКАМ!</p>
         </div>
       </header>
       <main className='relative m-auto mt-16 flex flex-col items-center justify-between max-md:justify-center max-md:m-0'>
