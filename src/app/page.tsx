@@ -60,7 +60,7 @@ export default function Home() {
       {modalOpen && <Modal />}
 
       <header className='z-10 w-full flex flex-col items-center justify-center'>
-        <Image src={Logo} alt='Logo' className='mt-5' />
+        <Image src={Logo} alt='Logo' className='mt-5 pointer-events-none' />
         <div className='flex flex-col items-center justify-start text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[40%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'>
           <p>ПРИВЕТСТВЕННЫЙ БОНУС</p>
           <p className='max-md:w-70'>ДО 2500$ ВСЕМ НОВЫМ ИГРОКАМ!</p>
@@ -82,7 +82,7 @@ export default function Home() {
             height={100}
             src={Arrow}
             alt='Arrow'
-            className='z-50 absolute top-[-2.5%] cursor-pointer max-md:top-[-5%]'
+            className='z-50 absolute top-[-2.5%] pointer-events-none cursor-pointer max-md:top-[-5%]'
           />
           <Image
             unoptimized
@@ -91,7 +91,7 @@ export default function Home() {
             src={ScrewRU}
             alt='Screw'
             className={clsx(
-              'cursor-pointer top-0 z-20 max-md:w-[272px] max-md:h-[272px]',
+              'cursor-pointer pointer-events-none top-0 z-20 max-md:w-[272px] max-md:h-[272px]',
               spin && 'animate-spin transition-all',
             )}
           />
@@ -107,7 +107,7 @@ export default function Home() {
             height={520}
             src={ShapesEllipses}
             alt='Shapes Ellipses'
-            className='absolute top-0 cursor-pointer z-30'
+            className='absolute top-0 pointer-events-none cursor-pointer z-30'
           />
           <Image
             unoptimized
@@ -115,22 +115,26 @@ export default function Home() {
             height={520}
             src={BaseWheel}
             alt='Base Wheel'
-            className='absolute top-0 cursor-pointer max-md:w-[272px] max-md:h-[272px]'
+            className='absolute top-0 cursor-pointer pointer-events-none max-md:w-[272px] max-md:h-[272px]'
           />
         </div>
       </main>
       <footer className='w-full flex-row flex items-center justify-center gap-5 pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:fixed max-md:bottom-0'>
-        <Image src={ETHSvg} alt='ETH' />
-        <Image src={LTCSvg} alt='LTCSvg' />
-        <Image src={BTCSvg} alt='BTC' />
-        <Image src={TetherSVG} alt='TetherSVG' />
-        <Image src={TONSvg} alt='TONSvg' />
+        <Image src={ETHSvg} className='pointer-events-none' alt='ETH' />
+        <Image src={LTCSvg} className='pointer-events-none' alt='LTCSvg' />
+        <Image src={BTCSvg} className='pointer-events-none' alt='BTC' />
+        <Image
+          src={TetherSVG}
+          className='pointer-events-none'
+          alt='TetherSVG'
+        />
+        <Image src={TONSvg} className='pointer-events-none' alt='TONSvg' />
       </footer>
       <Image
         width={400}
         src={Guitaer}
         alt='Guitar'
-        className='absolute bottom-[-2%] right-[-2%] max-md:hidden'
+        className='absolute bottom-[-2%] right-[-2%]  pointer-events-none max-md:hidden'
       />
       {modalOpen && (
         <LottiePlayer
@@ -153,7 +157,7 @@ export default function Home() {
         autoplay={true}
       />
       <Image
-        className='w-[650px] absolute bottom-0 left-[-5%] max-md:hidden'
+        className='w-[650px] absolute bottom-0 left-[-5%] pointer-events-none max-md:hidden'
         src={Doc}
         alt='Doc'
       />
