@@ -101,11 +101,11 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
             height={100}
             src={Arrow}
             alt='Arrow'
-            className='z-50 absolute top-[-8%] pointer-events-none cursor-pointer max-md:top-[-11.5%]'
+            className='z-50 absolute top-[-9%] pointer-events-none cursor-pointer max-md:top-[-11.5%]'
           />
           <Image
-            width={390}
-            height={390}
+            width={379.4}
+            height={379.4}
             src={lang === 'ru' ? ScrewRU : ScrewEN}
             alt='Screw'
             className={clsx(
@@ -119,7 +119,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           {spin === 1 && (
             <LottiePlayer
               className={clsx(
-                'z-20 relative w-[390px] h-[390px] max-md:w-[272px] max-md:h-[272px]',
+                'z-20 relative w-[380px] h-[380px] max-md:w-[272px] max-md:h-[272px]',
               )}
               src={lang === 'ru' ? FirstCircle : FirstCircleEN}
               loop={false}
@@ -128,14 +128,14 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           {spin === 3 && (
             <LottiePlayer
               className={clsx(
-                'z-20 relative w-[390px] h-[390px] max-md:w-[272px] max-md:h-[272px]',
+                'z-20 relative w-[380px] h-[380px] max-md:w-[272px] max-md:h-[272px]',
               )}
               src={lang === 'ru' ? SecondCircle : SecondCircleEN}
               loop={false}
             />
           )}
           <LottiePlayer
-            className='z-50 w-[150px] h-[150px] absolute top-[120px] left-[120px] cursor-pointer max-md:w-[120px] max-md:top-[60px] max-md:left-[77.5px]'
+            className='z-50 w-[150px] h-[150px] active:scale-95 active:ease-in-out absolute top-[115px] left-[115px] cursor-pointer max-md:w-[120px] max-md:top-[60px] max-md:left-[77.5px]'
             src={Spin}
             loop={true}
             autoplay={true}
@@ -145,12 +145,12 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
             height={200}
             src={ShapesEllipses}
             alt='Shapes Ellipses'
-            className='absolute top-[100px] pointer-events-none z-30 max-md:w-[150px] max-md:h-[150px] max-md:top-[60px]'
+            className='absolute top-[91px] left-[91px] pointer-events-none z-30 max-md:w-[150px] max-md:h-[150px] max-md:top-[60px] max-md:left-[62px]'
           />
           <Image
             src={BaseWheel}
             alt='Base Wheel'
-            className='absolute min-w-[475px] min-h-[475px] top-[-43px] pointer-events-none max-md:top-[-35px] max-md:min-w-[342px] max-md:min-h-[342px]'
+            className='absolute min-w-[475px] min-h-[475px] top-[-47px] pointer-events-none max-md:top-[-35px] max-md:min-w-[342px] max-md:min-h-[342px]'
           />
         </div>
       </main>
@@ -166,15 +166,14 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         <Image src={TONSvg} className='pointer-events-none' alt='TONSvg' />
       </footer>
       <Image
-        width={478}
-        height={597}
+        width={540}
         src={Guitar}
         alt='Guitar'
         className='absolute bottom-[-18%] right-[-6%] pointer-events-none max-md:hidden'
       />
       {modalOpen && (
         <LottiePlayer
-          className='z-[120] absolute bottom-[25%] right-[32%] max-md:right-[-5%] max-md:top-[25%]'
+          className='z-[120] absolute bottom-[25%] right-[35%] max-md:right-[-5%] max-md:top-[25%]'
           src={Fireworks}
           loop={true}
           autoplay={true}
@@ -193,7 +192,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         autoplay={true}
       />
       <Image
-        className='w-[510px] absolute bottom-0 left-[-5%] pointer-events-none max-md:hidden'
+        className='w-[620px] absolute bottom-0 left-[-5%] pointer-events-none max-md:hidden'
         src={Doc}
         alt='Doc'
       />
