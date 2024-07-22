@@ -65,20 +65,22 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
 
   return (
     <div className="w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden  flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between">
-      {modalOpen && (
-        <Modal spin={spin} closeModal={() => setModalOpen(false)} />
-      )}
+      {modalOpen && <Modal spin={spin} />}
 
       <header className='z-10 w-full flex flex-col items-center justify-center'>
         <Image src={Logo} alt='Logo' className='mt-5 pointer-events-none' />
         <div
-          className='flex flex-col items-center justify-start text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'
+          className='flex flex-col items-center justify-start uppercase text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'
           style={{
-            color: 'linear-gradient(90deg, #FAF9E0 0%, #FEF7A9 100%)',
+            color: 'linear-gradient(90deg, #FAF9E0 20%, #FEF7A9 80%)',
           }}
         >
-          <p>ПРИВЕТСТВЕННЫЙ БОНУС</p>
-          <p className='max-md:w-70'>ДО 2500$ ВСЕМ НОВЫМ ИГРОКАМ!</p>
+          <p>{lang === 'ru' ? 'ПРИВЕТСТВЕННЫЙ БОНУС' : 'Welcome bonus'}</p>
+          <p className='max-md:w-70'>
+            {lang === 'ru'
+              ? 'ДО 2500$ ВСЕМ НОВЫМ ИГРОКАМ!'
+              : 'up to $2500 for all new players!'}
+          </p>
         </div>
       </header>
       <main className='relative m-auto mt-16 flex flex-col items-center justify-between max-md:justify-center max-md:m-0'>
@@ -180,20 +182,20 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
       />
       {modalOpen && (
         <LottiePlayer
-          className='z-[101] absolute bottom-[25%] right-[32%] max-md:right-[-5%]'
+          className='z-[120] absolute bottom-[25%] right-[32%] max-md:right-[-5%] max-md:top-[25%]'
           src={Fireworks}
           loop={true}
           autoplay={true}
         />
       )}
       <LottiePlayer
-        className='z-30 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[0%] max-md:top-[25%]'
+        className='z-30 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[-11%] max-md:top-[25%]'
         src={FirstDragon}
         loop={true}
         autoplay={true}
       />
       <LottiePlayer
-        className='z-30 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:w-[105.69px] max-md:h-[105.69px] max-md:right-[0%] max-md:top-[26%]'
+        className='z-30 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:w-[105.69px] max-md:h-[105.69px] max-md:right-[-7%] max-md:top-[26%]'
         src={SecondDragon}
         loop={true}
         autoplay={true}
