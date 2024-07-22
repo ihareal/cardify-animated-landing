@@ -14,14 +14,26 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       keyframes: {
-        'spin-strange': {
-          from: { transform: 'rotate(90deg)' },
-          to: { transform: 'rotate(0deg)' },
+        'spin-first': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        'spin-first-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        'spin-second': {
+          '0%': { transform: 'rotate(-90deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        'spin-second-slow': {
+          '0%': { transform: 'rotate(-90deg)' },
+          '100%': { transform: 'rotate(360deg)' },
         },
       },
       animation: {
-        'spin-slow': 'spin 60s linear infinite',
-        'spin-strange': 'spin-strange 1s linear infinite',
+        'spin-first': 'spin-first 1s linear infinite',
+        'spin-second': 'spin-second 1s linear infinite',
       },
     },
   },
