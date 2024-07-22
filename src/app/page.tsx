@@ -48,11 +48,24 @@ export default function Home() {
   const handleSpin = () => {
     if (spin === 0) {
       setSpin(1);
+
+      setTimeout(() => {
+        setSpin(2);
+      }, 4900);
       return;
     }
 
     if (spin === 2) {
       setSpin(3);
+
+      setTimeout(() => {
+        setSpin(4);
+      }, 4900);
+
+      setTimeout(() => {
+        setModalOpen(true);
+      }, 5400);
+
       return;
     }
   };
@@ -94,7 +107,7 @@ export default function Home() {
             src={ScrewRU}
             alt='Screw'
             className={clsx(
-              'pointer-events-none relative z-[21] max-md:w-[272px] max-md:h-[272px]',
+              'pointer-events-none z-[20] max-md:w-[272px] max-md:h-[272px]',
               spin === 1 && 'hidden',
               spin === 2 && '-rotate-90',
               spin === 3 && 'hidden',
@@ -111,7 +124,7 @@ export default function Home() {
               loop={false}
               onEvent={e => {
                 if (e === 'complete') {
-                  setSpin(2);
+                  // setSpin(2);
                 }
               }}
             />
@@ -125,8 +138,7 @@ export default function Home() {
               loop={false}
               onEvent={e => {
                 if (e === 'complete') {
-                  setSpin(4);
-                  // setModalOpen(true);
+                  // setSpin(4);
                 }
               }}
             />
