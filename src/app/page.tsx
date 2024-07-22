@@ -23,6 +23,8 @@ import TetherSVG from '@/assets/images/Tether.svg';
 import Spin from '@/assets/animations/lottie/Spin.json';
 import Fireworks from '@/assets/animations/lottie/Fireworks.json';
 import FirstDragon from '@/assets/animations/lottie/FirstDragon.json';
+import FirstCircle from '@/assets/animations/lottie/FirstCircle.json';
+import SecondCircle from '@/assets/animations/lottie/SecondCircle.json';
 import SecondDragon from '@/assets/animations/lottie/SecondDragon.json';
 
 import clsx from 'clsx';
@@ -46,25 +48,11 @@ export default function Home() {
   const handleSpin = () => {
     if (spin === 0) {
       setSpin(1);
-
-      setTimeout(() => {
-        setSpin(2);
-      }, 6000);
-
       return;
     }
 
     if (spin === 2) {
       setSpin(3);
-
-      setTimeout(() => {
-        setSpin(4);
-      }, 6000);
-
-      setTimeout(() => {
-        setModalOpen(true);
-      }, 9000);
-
       return;
     }
   };
@@ -99,19 +87,50 @@ export default function Home() {
             alt='Arrow'
             className='z-50 absolute top-[-8%] pointer-events-none cursor-pointer max-md:top-[-5%]'
           />
+          {/* {(spin === 0 || spin === 4 || spin === 2) && ( */}
           <Image
             width={390}
             height={390}
             src={ScrewRU}
             alt='Screw'
             className={clsx(
-              'pointer-events-none top-0 z-20 max-md:w-[272px] max-md:h-[272px]',
-              spin === 1 && 'animate-spin-first',
+              'pointer-events-none relative z-[21] max-md:w-[272px] max-md:h-[272px]',
+              spin === 1 && 'hidden',
               spin === 2 && '-rotate-90',
-              spin === 3 && 'animate-spin-second',
-              spin === 4 && '-rotate-[270deg]',
+              spin === 3 && 'hidden',
+              spin === 4 && 'rotate-[-270deg]',
             )}
           />
+          {/* )} */}
+          {spin === 1 && (
+            <LottiePlayer
+              className={clsx(
+                'z-20 relative w-[390px] h-[390px] max-md:w-[272px] max-md:h-[272px]',
+              )}
+              src={FirstCircle}
+              loop={false}
+              onEvent={e => {
+                if (e === 'complete') {
+                  setSpin(2);
+                }
+              }}
+            />
+          )}
+          {spin === 3 && (
+            <LottiePlayer
+              className={clsx(
+                'z-20 relative w-[390px] h-[390px] max-md:w-[272px] max-md:h-[272px]',
+              )}
+              src={SecondCircle}
+              loop={false}
+              onEvent={e => {
+                if (e === 'complete') {
+                  setSpin(4);
+                  // setModalOpen(true);
+                }
+              }}
+            />
+          )}
           <LottiePlayer
             className='z-50 w-[150px] h-[150px] absolute top-[120px] left-[120px] cursor-pointer max-md:w-[120px] max-md:top-[60px] max-md:left-[77.5px]'
             src={Spin}
