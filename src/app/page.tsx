@@ -34,7 +34,7 @@ const LottiePlayer = dynamic(async () => {
 
 export default function Home() {
   const [lang, setLang] = useState<'en' | 'ru'>('ru');
-  const [spin, setSpin] = useState<boolean>(false);
+  const [spin, setSpin] = useState<number>(0);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   const detectLang = () => {
@@ -44,36 +44,47 @@ export default function Home() {
   };
 
   const handleSpin = () => {
-    setSpin(true);
+    if (spin === 0) {
+      setSpin(1);
 
-    setTimeout(() => {
-      setSpin(false);
-    }, 3000);
+      setTimeout(() => {
+        setSpin(2);
+      }, 6000);
 
-    setTimeout(() => {
-      setModalOpen(true);
-    }, 3500);
+      return;
+    }
+
+    if (spin === 2) {
+      setSpin(3);
+
+      setTimeout(() => {
+        setSpin(4);
+      }, 6000);
+
+      setTimeout(() => {
+        setModalOpen(true);
+      }, 9000);
+
+      return;
+    }
   };
 
   return (
     <div className="w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden  flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between">
-      {modalOpen && <Modal />}
+      {modalOpen && (
+        <Modal spin={spin} closeModal={() => setModalOpen(false)} />
+      )}
 
       <header className='z-10 w-full flex flex-col items-center justify-center'>
         <Image src={Logo} alt='Logo' className='mt-5 pointer-events-none' />
         <div className='flex flex-col items-center justify-start text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'>
           <p>ПРИВЕТСТВЕННЫЙ БОНУС</p>
-          <p className='max-md:w-70'>ДО 5000$ ВСЕМ НОВЫМ ИГРОКАМ!</p>
+          <p className='max-md:w-70'>ДО 2500$ ВСЕМ НОВЫМ ИГРОКАМ!</p>
         </div>
       </header>
       <main className='relative m-auto mt-16 flex flex-col items-center justify-between max-md:justify-center max-md:m-0'>
         <Image
-          className='absolute max-w-none left-[-200px] top-[-150px] select-none pointer-events-none max-md:left-[-25%] max-md:w-[400px] max-md:h-[400px] max-md:top-[-15%] animate-spin-slow duration-[90000ms]'
-          src={Electricity}
-          alt='Electricity'
-        />
-        <Image
-          className='absolute max-w-none left-[-200px] top-[-150px] select-none pointer-events-none max-md:left-[-25%] max-md:w-[400px] max-md:h-[400px] max-md:top-[-15%] animate-spin-slow duration-[90000ms]'
+          className='absolute max-w-none animate-pulse left-[-200px] top-[-125px] select-none pointer-events-none max-md:left-[-35%] max-md:w-[450px] max-md:h-[450px] max-md:top-[-23%]'
           src={Electricity}
           alt='Electricity'
         />
@@ -82,7 +93,6 @@ export default function Home() {
           onClick={handleSpin}
         >
           <Image
-            unoptimized
             width={100}
             height={100}
             src={Arrow}
@@ -90,35 +100,35 @@ export default function Home() {
             className='z-50 absolute top-[-8%] pointer-events-none cursor-pointer max-md:top-[-5%]'
           />
           <Image
-            unoptimized
             width={390}
             height={390}
             src={ScrewRU}
             alt='Screw'
             className={clsx(
               'pointer-events-none top-0 z-20 max-md:w-[272px] max-md:h-[272px]',
-              spin && 'animate-spin',
+              spin === 1 && 'animate-spin-first',
+              spin === 2 && '-rotate-90',
+              spin === 3 && 'animate-spin-second',
+              spin === 4 && '-rotate-[270deg]',
             )}
           />
           <LottiePlayer
-            className='z-50 w-[150px] h-[150px] absolute top-[120px] left-[120px] cursor-pointer max-md:w-[120px] max-md:top-[77.5px] max-md:left-[77.5px]'
+            className='z-50 w-[150px] h-[150px] absolute top-[120px] left-[120px] cursor-pointer max-md:w-[120px] max-md:top-[60px] max-md:left-[77.5px]'
             src={Spin}
             loop={true}
             autoplay={true}
           />
           <Image
-            unoptimized
             width={200}
             height={200}
             src={ShapesEllipses}
             alt='Shapes Ellipses'
-            className='absolute top-[100px] pointer-events-none z-30'
+            className='absolute top-[100px] pointer-events-none z-30 max-md:w-[150px] max-md:h-[150px] max-md:top-[60px]'
           />
           <Image
-            unoptimized
             src={BaseWheel}
             alt='Base Wheel'
-            className='absolute min-w-[475px] min-h-[475px] top-[-43px] pointer-events-none max-md:w-[272px] max-md:h-[272px]'
+            className='absolute min-w-[475px] min-h-[475px] top-[-43px] pointer-events-none max-md:top-[-35px] max-md:min-w-[342px] max-md:min-h-[342px]'
           />
         </div>
       </main>
@@ -149,13 +159,13 @@ export default function Home() {
         />
       )}
       <LottiePlayer
-        className='z-30 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:left-[0%] max-md:top-[20%]'
+        className='z-30 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[120px] max-md:h-[120px] max-md:left-[0%] max-md:top-[25%]'
         src={FirstDragon}
         loop={true}
         autoplay={true}
       />
       <LottiePlayer
-        className='z-30 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:right-[0%] max-md:top-[17%]'
+        className='z-30 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:w-[106px] max-md:h-[106px] max-md:right-[0%] max-md:top-[26%]'
         src={SecondDragon}
         loop={true}
         autoplay={true}
