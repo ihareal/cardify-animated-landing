@@ -48,6 +48,11 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
       setTimeout(() => {
         setSpin(2);
       }, 4900);
+
+      setTimeout(() => {
+        setModalOpen(true);
+      }, 5400);
+
       return;
     }
 
@@ -68,7 +73,13 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
 
   return (
     <div className="w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden  flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between">
-      {modalOpen && <Modal lang={lang} />}
+      {modalOpen && (
+        <Modal
+          lang={lang}
+          step={spin}
+          handleClose={() => setModalOpen(false)}
+        />
+      )}
 
       <header className='z-10 w-full flex flex-col items-center justify-center'>
         <Image src={Logo} alt='Logo' className='mt-5 pointer-events-none' />
@@ -171,7 +182,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         alt='Guitar'
         className='absolute bottom-[-18%] right-[-6%] pointer-events-none max-md:hidden'
       />
-      {modalOpen && (
+      {modalOpen && spin !== 2 && (
         <LottiePlayer
           className='z-[120] absolute bottom-[25%] right-[35%] max-md:right-[-5%] max-md:top-[25%]'
           src={Fireworks}

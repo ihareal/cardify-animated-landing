@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
 
-export default function Modal({ lang }: { lang: 'en' | 'ru' }) {
+export default function Modal({
+  lang,
+  step,
+  handleClose,
+}: {
+  lang: 'en' | 'ru';
+  handleClose: () => void;
+  step: number;
+}) {
   const href = 'https://cardify.cloud/auth';
   return (
     <div
@@ -32,16 +40,19 @@ export default function Modal({ lang }: { lang: 'en' | 'ru' }) {
         >
           +275% БОНУС К ДЕПОЗИТУ
         </button>
-        <button
-          className='mt-5 rounded-2xl border font-bold text-[20px] leading-[22.6px] border-white w-[320px] p-[15px]'
-          style={{
-            background: 'rgba(255, 255, 255, 0.2)',
-          }}
-        >
-          300 ФРИСПИНОВ
-        </button>
-        <Link href={href}>
+        {step !== 2 && (
           <button
+            className='mt-5 rounded-2xl border font-bold text-[20px] leading-[22.6px] border-white w-[320px] p-[15px]'
+            style={{
+              background: 'rgba(255, 255, 255, 0.2)',
+            }}
+          >
+            300 ФРИСПИНОВ
+          </button>
+        )}
+        {step === 2 ? (
+          <button
+            onClick={handleClose}
             className='z-[130] w-[320px] mt-5 font-bold text-xl leading-[22.6px] cursor-pointer text-center py-4 rounded-lg hover:opacity-90'
             style={{
               border: '1px solid rgba(229, 0, 70, 1)',
@@ -49,9 +60,22 @@ export default function Modal({ lang }: { lang: 'en' | 'ru' }) {
                 'linear-gradient(180deg, #E50046 50.94%, #7D0F2F 100%)',
             }}
           >
-            ПОЛУЧИТЬ БОНУС
+            КРУТИТЬ ЕЩЕ
           </button>
-        </Link>
+        ) : (
+          <Link href={href}>
+            <button
+              className='z-[130] w-[320px] mt-5 font-bold text-xl leading-[22.6px] cursor-pointer text-center py-4 rounded-lg hover:opacity-90'
+              style={{
+                border: '1px solid rgba(229, 0, 70, 1)',
+                background:
+                  'linear-gradient(180deg, #E50046 50.94%, #7D0F2F 100%)',
+              }}
+            >
+              ПОЛУЧИТЬ БОНУС
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
