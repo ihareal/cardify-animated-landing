@@ -78,7 +78,12 @@ export default function Home() {
 
       <header className='z-10 w-full flex flex-col items-center justify-center'>
         <Image src={Logo} alt='Logo' className='mt-5 pointer-events-none' />
-        <div className='flex flex-col items-center justify-start text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'>
+        <div
+          className='flex flex-col items-center justify-start text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'
+          style={{
+            color: 'linear-gradient(90deg, #FAF9E0 0%, #FEF7A9 100%)',
+          }}
+        >
           <p>ПРИВЕТСТВЕННЫЙ БОНУС</p>
           <p className='max-md:w-70'>ДО 2500$ ВСЕМ НОВЫМ ИГРОКАМ!</p>
         </div>
@@ -98,9 +103,8 @@ export default function Home() {
             height={100}
             src={Arrow}
             alt='Arrow'
-            className='z-50 absolute top-[-8%] pointer-events-none cursor-pointer max-md:top-[-5%]'
+            className='z-50 absolute top-[-8%] pointer-events-none cursor-pointer max-md:top-[-11.5%]'
           />
-          {/* {(spin === 0 || spin === 4 || spin === 2) && ( */}
           <Image
             width={390}
             height={390}
@@ -190,13 +194,13 @@ export default function Home() {
         />
       )}
       <LottiePlayer
-        className='z-30 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[120px] max-md:h-[120px] max-md:left-[0%] max-md:top-[25%]'
+        className='z-30 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[0%] max-md:top-[25%]'
         src={FirstDragon}
         loop={true}
         autoplay={true}
       />
       <LottiePlayer
-        className='z-30 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:w-[106px] max-md:h-[106px] max-md:right-[0%] max-md:top-[26%]'
+        className='z-30 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:w-[105.69px] max-md:h-[105.69px] max-md:right-[0%] max-md:top-[26%]'
         src={SecondDragon}
         loop={true}
         autoplay={true}
