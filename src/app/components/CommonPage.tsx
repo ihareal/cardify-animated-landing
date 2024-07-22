@@ -5,6 +5,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 import Logo from '@/assets/images/logo.svg';
+import ScrewEN from '@/assets/images/screw-en.png';
 import ScrewRU from '@/assets/images/screw-ru.png';
 import Arrow from '@/assets/images/Arrow.png';
 import ShapesEllipses from '@/assets/images/ShapesEllipses.png';
@@ -25,6 +26,8 @@ import Fireworks from '@/assets/animations/lottie/Fireworks.json';
 import FirstDragon from '@/assets/animations/lottie/FirstDragon.json';
 import FirstCircle from '@/assets/animations/lottie/FirstCircle.json';
 import SecondCircle from '@/assets/animations/lottie/SecondCircle.json';
+import FirstCircleEN from '@/assets/animations/lottie/FirstCircleEn.json';
+import SecondCircleEN from '@/assets/animations/lottie/SecondCircleEn.json';
 import SecondDragon from '@/assets/animations/lottie/SecondDragon.json';
 
 import clsx from 'clsx';
@@ -103,7 +106,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           <Image
             width={390}
             height={390}
-            src={ScrewRU}
+            src={lang === 'ru' ? ScrewRU : ScrewEN}
             alt='Screw'
             className={clsx(
               'pointer-events-none z-[20] max-md:w-[272px] max-md:h-[272px]',
@@ -118,7 +121,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
               className={clsx(
                 'z-20 relative w-[390px] h-[390px] max-md:w-[272px] max-md:h-[272px]',
               )}
-              src={FirstCircle}
+              src={lang === 'ru' ? FirstCircle : FirstCircleEN}
               loop={false}
             />
           )}
@@ -127,7 +130,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
               className={clsx(
                 'z-20 relative w-[390px] h-[390px] max-md:w-[272px] max-md:h-[272px]',
               )}
-              src={SecondCircle}
+              src={lang === 'ru' ? SecondCircle : SecondCircleEN}
               loop={false}
             />
           )}
