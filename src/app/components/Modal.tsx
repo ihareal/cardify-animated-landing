@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-export default function Modal({ spin }: { spin: number }) {
+export default function Modal({ lang }: { lang: 'en' | 'ru' }) {
   const href = 'https://cardify.cloud/auth';
   return (
     <div

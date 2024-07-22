@@ -65,7 +65,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
 
   return (
     <div className="w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden  flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between">
-      {modalOpen && <Modal spin={spin} />}
+      {modalOpen && <Modal lang={lang} />}
 
       <header className='z-10 w-full flex flex-col items-center justify-center'>
         <Image src={Logo} alt='Logo' className='mt-5 pointer-events-none' />
@@ -113,7 +113,6 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
               spin === 4 && 'rotate-[-270deg]',
             )}
           />
-          {/* )} */}
           {spin === 1 && (
             <LottiePlayer
               className={clsx(
@@ -121,11 +120,6 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
               )}
               src={FirstCircle}
               loop={false}
-              onEvent={e => {
-                if (e === 'complete') {
-                  // setSpin(2);
-                }
-              }}
             />
           )}
           {spin === 3 && (
@@ -135,11 +129,6 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
               )}
               src={SecondCircle}
               loop={false}
-              onEvent={e => {
-                if (e === 'complete') {
-                  // setSpin(4);
-                }
-              }}
             />
           )}
           <LottiePlayer
