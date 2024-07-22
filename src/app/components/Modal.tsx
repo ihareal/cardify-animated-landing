@@ -5,7 +5,7 @@ export default function Modal({ lang }: { lang: 'en' | 'ru' }) {
   const href = 'https://cardify.cloud/auth';
   return (
     <div
-      className='absolute z-[121] flex flex-col h-full min-h-screen max-h-screen w-full justify-center items-center'
+      className='absolute z-[119] flex flex-col h-full min-h-screen max-h-screen w-full justify-center items-center'
       style={{
         background: 'rgba(0, 0,0, .4)',
       }}
@@ -42,7 +42,7 @@ export default function Modal({ lang }: { lang: 'en' | 'ru' }) {
         </button>
         <Link href={href}>
           <button
-            className='z-[120] w-[320px] mt-5 font-bold text-xl leading-[22.6px] cursor-pointer text-center py-4 rounded-lg hover:opacity-90'
+            className='z-[130] w-[320px] mt-5 font-bold text-xl leading-[22.6px] cursor-pointer text-center py-4 rounded-lg hover:opacity-90'
             style={{
               border: '1px solid rgba(229, 0, 70, 1)',
               background:
