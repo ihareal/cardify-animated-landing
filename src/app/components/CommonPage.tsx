@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-import Logo from '@/assets/images/logo.svg';
+import Logo from '@/assets/images/logo.png';
 import ScrewEN from '@/assets/images/screw-en.png';
 import ScrewRU from '@/assets/images/screw-ru.png';
 import Arrow from '@/assets/images/Arrow.png';
@@ -16,9 +16,9 @@ import Electricity from '@/assets/images/Electricity.png';
 
 // Tokens if Footer
 import BTCSvg from '@/assets/images/BTC.svg';
-import LTCSvg from '@/assets/images/LTC.svg';
+import LTCSvg from '@/assets/images/LTC.png';
 import TONSvg from '@/assets/images/TON.svg';
-import TetherSVG from '@/assets/images/Tether.svg';
+import TetherSVG from '@/assets/images/Tether.png';
 import Visa from '@/assets/images/VISA.svg';
 import MasterCard from '@/assets/images/MasterCard.svg';
 import Peace from '@/assets/images/Peace.svg';
@@ -89,7 +89,13 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
       )}
 
       <header className='z-10 w-full flex flex-col items-center justify-center'>
-        <Image src={Logo} alt='Logo' className='mt-5 pointer-events-none' />
+        <Image
+          src={Logo}
+          alt='Logo'
+          width={118}
+          height={69}
+          className='mt-5 pointer-events-none'
+        />
         <div
           className='flex flex-col items-center justify-start uppercase text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'
           style={{
@@ -209,14 +215,22 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           </button>
         </div>
       </main>
-      <footer className='w-full flex-col gap-2 pointer-events-none flex items-center justify-center pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:fixed max-md:bottom-0'>
+      <footer className='w-full flex-col gap-2 pointer-events-none flex items-center justify-center pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2  max-md:bottom-0'>
         <div className='w-full flex-row pointer-events-none flex items-center justify-center gap-[11.72px] '>
-          <Image src={LTCSvg} className='pointer-events-none' alt='LTCSvg' />
+          <Image
+            src={LTCSvg}
+            width={77.1}
+            height={23.05}
+            className='pointer-events-none'
+            alt='LTCSvg'
+          />
           <Image src={BTCSvg} className='pointer-events-none' alt='BTC' />
           <Image
             src={TetherSVG}
             className='pointer-events-none'
             alt='TetherSVG'
+            width={79.49}
+            height={25.44}
           />
           <Image src={TONSvg} className='pointer-events-none' alt='TONSvg' />
         </div>
