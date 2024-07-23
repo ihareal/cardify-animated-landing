@@ -13,7 +13,7 @@ export default function Modal({
   const href = 'https://cardify.cloud/auth';
   return (
     <div
-      className='absolute z-[119] flex flex-col h-full min-h-screen max-h-screen w-full justify-center items-center'
+      className='overflow-hidden absolute z-[119] flex flex-col h-full min-h-screen max-h-screen w-full justify-center items-center'
       style={{
         background: 'rgba(0, 0,0, .4)',
       }}

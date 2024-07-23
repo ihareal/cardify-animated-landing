@@ -37,7 +37,7 @@ const config: Config = {
       },
       animation: {
         'spin-first': 'spin-first 1s linear infinite',
-        'pulse-one': 'pulse-one 1s ease-in',
+        'pulse-one': 'pulse-one 2s ease-in',
         'spin-second': 'spin-second 1s linear infinite',
       },
     },

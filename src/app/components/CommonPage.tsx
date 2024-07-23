@@ -16,7 +16,6 @@ import Electricity from '@/assets/images/Electricity.png';
 
 // Tokens if Footer
 import BTCSvg from '@/assets/images/BTC.svg';
-import ETHSvg from '@/assets/images/ETH.svg';
 import LTCSvg from '@/assets/images/LTC.svg';
 import TONSvg from '@/assets/images/TON.svg';
 import TetherSVG from '@/assets/images/Tether.svg';
@@ -52,9 +51,9 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         setSpin(2);
       }, 4900);
 
-      setTimeout(() => {
-        setModalOpen(true);
-      }, 5400);
+      // setTimeout(() => {
+      //   setModalOpen(true);
+      // }, 5400);
 
       return;
     }
@@ -75,7 +74,12 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
   };
 
   return (
-    <div className="w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden  flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between">
+    <div
+      className={clsx(
+        "w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between",
+        modalOpen && 'overflow-hidden',
+      )}
+    >
       {modalOpen && (
         <Modal
           lang={lang}
@@ -103,8 +107,8 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
       <main className='w-full px-20 relative m-auto mt-16 flex flex-row items-start gap-20 justify-center max-md:gap-0 max-md:items-center max-md:px-0 max-md:flex-col max-md:m-0 max-md:justify-start'>
         <div
           className={clsx(
-            'absolute animate-pulse-one left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-24 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:left-0 max-md:relative',
-            spin < 2 && 'invisible',
+            'absolute animate-pulse-one delay-1000 left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-24 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:left-0 max-md:relative',
+            spin < 2 && 'md:hidden max-md:invisible',
           )}
         >
           <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
@@ -188,8 +192,8 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
 
         <div
           className={clsx(
-            ' absolute animate-pulse-one right-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-5 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:right-0 max-md:relative',
-            spin < 4 && 'invisible',
+            'absolute animate-pulse-one delay-1000 right-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-5 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:right-0 max-md:relative max-md:mb-2',
+            spin < 4 && 'md:hidden max-md:invisible',
           )}
         >
           <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
@@ -232,14 +236,22 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         alt='Guitar'
         className='absolute bottom-[-18%] right-[-6%] pointer-events-none max-md:hidden'
       />
-      {/* {modalOpen && spin !== 2 && (
+      {modalOpen && spin !== 2 && (
         <LottiePlayer
-          className='z-[100] absolute bottom-[25%] right-[35%] max-md:right-[-5%] max-md:top-[25%]'
+          className='z-[100] absolute bottom-[25%] left-[5%] max-md:right-[-5%] max-md:top-[25%]'
           src={Fireworks}
           loop={true}
           autoplay={true}
         />
-      )} */}
+      )}
+      {modalOpen && spin !== 2 && (
+        <LottiePlayer
+          className='z-[100] absolute bottom-[25%] right-[5%] max-md:left-[-5%] max-md:top-[25%]'
+          src={Fireworks}
+          loop={true}
+          autoplay={true}
+        />
+      )}
       <LottiePlayer
         className='z-20 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[-11%] max-md:top-[25%]'
         src={FirstDragon}
