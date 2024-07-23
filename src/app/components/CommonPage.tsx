@@ -100,22 +100,25 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           </p>
         </div>
       </header>
-      <main className='w-full px-20 relative m-auto mt-16 flex flex-row items-start gap-20 justify-center max-md:gap-0 max-md:items-center max-md:px-0 max-md:flex-col max-md:justify-center max-md:m-0'>
-        {spin >= 2 && (
-          <div className='absolute animate-pulse-one left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-24 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:left-0 max-md:relative'>
-            <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
-              Первый приз:
-            </h3>
-            <button
-              className='rounded-2xl font-bold text-[20px] leading-[22.6px] w-[320px] p-[15px] max-md:text-[15px] max-md:leading-[16.95px] max-md:p-3 max-md:w-[248px]'
-              style={{
-                background: 'rgba(0, 0, 0, 0.2)',
-              }}
-            >
-              +275% БОНУС К ДЕПОЗИТУ
-            </button>
-          </div>
-        )}
+      <main className='w-full px-20 relative m-auto mt-16 flex flex-row items-start gap-20 justify-center max-md:gap-0 max-md:items-center max-md:px-0 max-md:flex-col max-md:m-0 max-md:justify-start'>
+        <div
+          className={clsx(
+            'absolute animate-pulse-one left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-24 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:left-0 max-md:relative',
+            spin < 2 && 'invisible',
+          )}
+        >
+          <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
+            Первый приз:
+          </h3>
+          <button
+            className='rounded-2xl font-bold text-[20px] leading-[22.6px] w-[320px] p-[15px] max-md:text-[15px] max-md:leading-[16.95px] max-md:p-3 max-md:w-[248px]'
+            style={{
+              background: 'rgba(0, 0, 0, 0.2)',
+            }}
+          >
+            +275% БОНУС К ДЕПОЗИТУ
+          </button>
+        </div>
         <div
           className='relative flex flex-col items-center justify-start max-md:justify-center max-md:h-full max-md:order-1'
           onClick={handleSpin}
@@ -183,24 +186,26 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           />
         </div>
 
-        {spin >= 4 && (
-          <div className='absolute animate-pulse-one right-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-5 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:right-0 max-md:relative'>
-            <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
-              Второй приз:
-            </h3>
-            <button
-              className='rounded-2xl font-bold text-[20px] leading-[22.6px] w-[320px] p-[15px] max-md:text-[15px] max-md:leading-[16.95px] max-md:p-3 max-md:w-[248px]'
-              style={{
-                background: 'rgba(0, 0, 0, 0.2)',
-              }}
-            >
-              300 ФРИСПИНОВ
-            </button>
-          </div>
-        )}
+        <div
+          className={clsx(
+            ' absolute animate-pulse-one right-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-5 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:right-0 max-md:relative',
+            spin < 4 && 'invisible',
+          )}
+        >
+          <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
+            Второй приз:
+          </h3>
+          <button
+            className='rounded-2xl font-bold text-[20px] leading-[22.6px] w-[320px] p-[15px] max-md:text-[15px] max-md:leading-[16.95px] max-md:p-3 max-md:w-[248px]'
+            style={{
+              background: 'rgba(0, 0, 0, 0.2)',
+            }}
+          >
+            300 ФРИСПИНОВ
+          </button>
+        </div>
       </main>
       <footer className='w-full flex-col gap-2 pointer-events-none flex items-center justify-center pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:fixed max-md:bottom-0'>
-        {/* <Image src={ETHSvg} className='pointer-events-none' alt='ETH' /> */}
         <div className='w-full flex-row pointer-events-none flex items-center justify-center gap-[11.72px] '>
           <Image src={LTCSvg} className='pointer-events-none' alt='LTCSvg' />
           <Image src={BTCSvg} className='pointer-events-none' alt='BTC' />
