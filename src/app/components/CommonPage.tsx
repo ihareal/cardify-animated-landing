@@ -102,7 +102,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
       </header>
       <main className='w-full px-20 relative m-auto mt-16 flex flex-row items-start gap-20 justify-center max-md:gap-0 max-md:items-center max-md:px-0 max-md:flex-col max-md:justify-center max-md:m-0'>
         {spin >= 2 && (
-          <div className='absolute animate-pulse-one left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-24 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-[365px]  max-md:relative'>
+          <div className='absolute animate-pulse-one left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-24 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:left-0 max-md:relative'>
             <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
               Первый приз:
             </h3>
@@ -184,7 +184,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         </div>
 
         {spin >= 4 && (
-          <div className='absolute animate-pulse-one right-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-5 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-[365px] max-md:relative'>
+          <div className='absolute animate-pulse-one right-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-5 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:right-0 max-md:relative'>
             <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
               Второй приз:
             </h3>
@@ -227,14 +227,14 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         alt='Guitar'
         className='absolute bottom-[-18%] right-[-6%] pointer-events-none max-md:hidden'
       />
-      {modalOpen && spin !== 2 && (
+      {/* {modalOpen && spin !== 2 && (
         <LottiePlayer
-          className='z-[120] absolute bottom-[25%] right-[35%] max-md:right-[-5%] max-md:top-[25%]'
+          className='z-[100] absolute bottom-[25%] right-[35%] max-md:right-[-5%] max-md:top-[25%]'
           src={Fireworks}
           loop={true}
           autoplay={true}
         />
-      )}
+      )} */}
       <LottiePlayer
         className='z-20 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[-11%] max-md:top-[25%]'
         src={FirstDragon}
