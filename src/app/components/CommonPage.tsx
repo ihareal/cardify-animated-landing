@@ -20,6 +20,9 @@ import ETHSvg from '@/assets/images/ETH.svg';
 import LTCSvg from '@/assets/images/LTC.svg';
 import TONSvg from '@/assets/images/TON.svg';
 import TetherSVG from '@/assets/images/Tether.svg';
+import Visa from '@/assets/images/VISA.svg';
+import MasterCard from '@/assets/images/MasterCard.svg';
+import Peace from '@/assets/images/Peace.svg';
 
 import Spin from '@/assets/animations/lottie/Spin.json';
 import Fireworks from '@/assets/animations/lottie/Fireworks.json';
@@ -97,16 +100,31 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           </p>
         </div>
       </header>
-      <main className='relative m-auto mt-16 flex flex-col items-center justify-between max-md:justify-center max-md:m-0'>
-        <Image
-          className='absolute max-w-none animate-pulse left-[-200px] top-[-125px] select-none pointer-events-none max-md:left-[-35%] max-md:w-[450px] max-md:h-[450px] max-md:top-[-23%]'
-          src={Electricity}
-          alt='Electricity'
-        />
+      <main className='w-full px-20 relative m-auto mt-16 flex flex-row items-start gap-20 justify-center max-md:gap-0 max-md:items-center max-md:px-0 max-md:flex-col max-md:justify-center max-md:m-0'>
+        {spin >= 2 && (
+          <div className='absolute left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-24 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-[365px]  max-md:relative'>
+            <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
+              Первый приз:
+            </h3>
+            <button
+              className='rounded-2xl font-bold text-[20px] leading-[22.6px] w-[320px] p-[15px] max-md:text-[15px] max-md:leading-[16.95px] max-md:p-3 max-md:w-[248px]'
+              style={{
+                background: 'rgba(0, 0, 0, 0.2)',
+              }}
+            >
+              +275% БОНУС К ДЕПОЗИТУ
+            </button>
+          </div>
+        )}
         <div
-          className='relative w-full flex flex-col items-center justify-start max-md:justify-center max-md:h-full'
+          className='relative flex flex-col items-center justify-start max-md:justify-center max-md:h-full max-md:order-1'
           onClick={handleSpin}
         >
+          <Image
+            className='absolute max-w-none animate-pulse left-[-200px] top-[-125px] select-none pointer-events-none max-md:left-[-35%] max-md:w-[450px] max-md:h-[450px] max-md:top-[-23%]'
+            src={Electricity}
+            alt='Electricity'
+          />
           <Image
             width={100}
             height={100}
@@ -164,17 +182,44 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
             className='absolute min-w-[475px] min-h-[475px] top-[-47px] pointer-events-none max-md:top-[-35px] max-md:min-w-[342px] max-md:min-h-[342px]'
           />
         </div>
+
+        {spin >= 4 && (
+          <div className='absolute right-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-5 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-[365px] max-md:relative'>
+            <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
+              Второй приз:
+            </h3>
+            <button
+              className='rounded-2xl font-bold text-[20px] leading-[22.6px] w-[320px] p-[15px] max-md:text-[15px] max-md:leading-[16.95px] max-md:p-3 max-md:w-[248px]'
+              style={{
+                background: 'rgba(0, 0, 0, 0.2)',
+              }}
+            >
+              300 ФРИСПИНОВ
+            </button>
+          </div>
+        )}
       </main>
-      <footer className='w-full flex-row pointer-events-none flex items-center justify-center gap-[11.72px] pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:fixed max-md:bottom-0'>
-        <Image src={ETHSvg} className='pointer-events-none' alt='ETH' />
-        <Image src={LTCSvg} className='pointer-events-none' alt='LTCSvg' />
-        <Image src={BTCSvg} className='pointer-events-none' alt='BTC' />
-        <Image
-          src={TetherSVG}
-          className='pointer-events-none'
-          alt='TetherSVG'
-        />
-        <Image src={TONSvg} className='pointer-events-none' alt='TONSvg' />
+      <footer className='w-full flex-col gap-2 pointer-events-none flex items-center justify-center pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:fixed max-md:bottom-0'>
+        {/* <Image src={ETHSvg} className='pointer-events-none' alt='ETH' /> */}
+        <div className='w-full flex-row pointer-events-none flex items-center justify-center gap-[11.72px] '>
+          <Image src={LTCSvg} className='pointer-events-none' alt='LTCSvg' />
+          <Image src={BTCSvg} className='pointer-events-none' alt='BTC' />
+          <Image
+            src={TetherSVG}
+            className='pointer-events-none'
+            alt='TetherSVG'
+          />
+          <Image src={TONSvg} className='pointer-events-none' alt='TONSvg' />
+        </div>
+        <div className='w-full flex-row pointer-events-none flex items-center justify-center gap-[11.72px]'>
+          <Image src={Visa} className='pointer-events-none' alt='Visa' />
+          <Image
+            src={MasterCard}
+            className='pointer-events-none'
+            alt='MasterCard'
+          />
+          <Image src={Peace} className='pointer-events-none' alt='Peace' />
+        </div>
       </footer>
       <Image
         width={540}
@@ -191,13 +236,13 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         />
       )}
       <LottiePlayer
-        className='z-30 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[-11%] max-md:top-[25%]'
+        className='z-20 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[-11%] max-md:top-[25%]'
         src={FirstDragon}
         loop={true}
         autoplay={true}
       />
       <LottiePlayer
-        className='z-30 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:w-[105.69px] max-md:h-[105.69px] max-md:right-[-7%] max-md:top-[26%]'
+        className='z-20 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:w-[105.69px] max-md:h-[105.69px] max-md:right-[-7%] max-md:top-[26%]'
         src={SecondDragon}
         loop={true}
         autoplay={true}
