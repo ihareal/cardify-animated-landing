@@ -30,9 +30,14 @@ const config: Config = {
           '0%': { transform: 'rotate(-90deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
+        'pulse-one': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         'spin-first': 'spin-first 1s linear infinite',
+        'pulse-one': 'pulse-one 1s ease-in',
         'spin-second': 'spin-second 1s linear infinite',
       },
     },
