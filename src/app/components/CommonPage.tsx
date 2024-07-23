@@ -76,7 +76,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
   return (
     <div
       className={clsx(
-        "w-full relative m-auto flex min-h-screen max-h-screen overflow-hidden flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between",
+        "w-full relative m-auto flex h-full min-h-screen max-h-screen overflow-hidden flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between",
         modalOpen && 'overflow-hidden',
       )}
     >
@@ -215,7 +215,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           </button>
         </div>
       </main>
-      <footer className='w-full flex-col gap-2 pointer-events-none flex items-center justify-center pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2  max-md:bottom-0'>
+      <footer className='w-full flex-col gap-2 pointer-events-none flex items-center justify-center pb-5 max-md:flex-wrap max-md:px-10 max-md:gap-2 max-md:absolute max-md:bottom-0'>
         <div className='w-full flex-row pointer-events-none flex items-center justify-center gap-[11.72px] '>
           <Image
             src={LTCSvg}
