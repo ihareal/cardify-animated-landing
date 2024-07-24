@@ -76,8 +76,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
   return (
     <div
       className={clsx(
-        "w-full relative m-auto flex h-screen overflow-hidden flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between",
-        modalOpen && 'overflow-hidden',
+        "w-full relative m-auto flex h-screen overflow-hidden overscroll-none flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between max-md:h-full max-md:min-h-screen",
       )}
     >
       {modalOpen && (
@@ -97,7 +96,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           className='mt-5 pointer-events-none'
         />
         <div
-          className='flex flex-col items-center justify-start uppercase text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%]'
+          className='flex flex-col items-center justify-start uppercase text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%] max-md:mb-5'
           style={{
             color: 'linear-gradient(90deg, #FAF9E0 20%, #FEF7A9 80%)',
           }}
