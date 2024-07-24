@@ -1,10 +1,14 @@
 // components/OrientationAlert.js
+'use client';
 import { useEffect } from 'react';
 
 const OrientationAlert = () => {
   useEffect(() => {
     const checkOrientation = () => {
-      if (window.matchMedia('(orientation: landscape)').matches) {
+      if (
+        window.matchMedia('(orientation: landscape)').matches &&
+        window.innerWidth <= 768
+      ) {
         alert('Пожалуйста, поверните устройство обратно в портретный режим.');
       }
     };

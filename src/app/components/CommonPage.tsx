@@ -82,7 +82,8 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
     <div
       className={clsx(
         "w-full relative m-auto flex h-screen overflow-hidden overscroll-none flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between max-md:h-dvh",
-        window.matchMedia('(orientation: landscape)').matches && 'blur-3xl',
+        window.matchMedia('(orientation: landscape)').matches &&
+          'max-md:blur-3xl',
       )}
     >
       <OrientationAlert />
@@ -120,7 +121,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
       <main className='w-full px-20 relative m-auto mt-16 flex flex-row items-start gap-20 justify-center max-md:gap-0 max-md:items-center max-md:px-0 max-md:flex-col max-md:m-0 max-md:justify-start'>
         <div
           className={clsx(
-            'absolute animate-pulse-one delay-1000 left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-24 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:left-0 max-md:relative',
+            'absolute animate-pulse-one delay-1000 left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-10 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:left-0 max-md:relative',
             spin < 2 && 'md:hidden max-md:invisible',
           )}
         >
