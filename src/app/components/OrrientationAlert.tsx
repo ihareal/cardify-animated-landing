@@ -9,6 +9,10 @@ const OrientationAlert = () => {
       }
     };
 
+    if (typeof window === 'undefined') {
+      return;
+    }
+
     // Initial check
     checkOrientation();
 

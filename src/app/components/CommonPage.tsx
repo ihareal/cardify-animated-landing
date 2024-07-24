@@ -44,6 +44,10 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
   const [spin, setSpin] = useState<number>(0);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
   const handleSpin = () => {
     if (spin === 0) {
       setSpin(1);
