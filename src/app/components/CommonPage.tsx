@@ -76,7 +76,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
   return (
     <div
       className={clsx(
-        "w-full relative m-auto flex h-full min-h-screen max-h-screen overflow-hidden flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between",
+        "w-full relative m-auto flex h-screen overflow-hidden flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between",
         modalOpen && 'overflow-hidden',
       )}
     >
@@ -248,23 +248,23 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         width={540}
         src={Guitar}
         alt='Guitar'
-        className='absolute bottom-[-18%] right-[-6%] pointer-events-none max-md:hidden'
+        className='absolute bottom-[-18%] right-[-6%] pointer-events-none max-xl:hidden'
       />
       {modalOpen && spin !== 2 && (
-      <LottiePlayer
-        className='z-[100] absolute bottom-[25%] left-[5%] max-md:right-[-5%] max-md:top-[-30%]'
-        src={Fireworks}
-        loop={true}
-        autoplay={true}
-      />
+        <LottiePlayer
+          className='z-[100] absolute bottom-[25%] left-[5%] max-md:right-[-5%] max-md:top-[-30%]'
+          src={Fireworks}
+          loop={true}
+          autoplay={true}
+        />
       )}
       {modalOpen && spin !== 2 && (
-      <LottiePlayer
-        className='z-[100] absolute bottom-[25%] right-[5%] max-md:left-[-5%] max-md:bottom-[5%]'
-        src={Fireworks}
-        loop={true}
-        autoplay={true}
-      />
+        <LottiePlayer
+          className='z-[100] absolute bottom-[25%] right-[5%] max-md:left-[-5%] max-md:bottom-[5%]'
+          src={Fireworks}
+          loop={true}
+          autoplay={true}
+        />
       )}
       <LottiePlayer
         className='z-20 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[-11%] max-md:top-[25%]'
@@ -279,7 +279,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         autoplay={true}
       />
       <Image
-        className='w-[620px] absolute bottom-0 left-[-5%] pointer-events-none max-md:hidden'
+        className='w-[620px] absolute bottom-0 left-[-5%] pointer-events-none max-xl:hidden'
         src={Doc}
         alt='Doc'
       />
