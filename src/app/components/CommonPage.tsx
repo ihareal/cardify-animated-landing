@@ -34,6 +34,7 @@ import SecondDragon from '@/assets/animations/lottie/SecondDragon.json';
 
 import clsx from 'clsx';
 import Modal from '../components/Modal';
+import OrientationAlert from './OrrientationAlert';
 
 const LottiePlayer = dynamic(async () => {
   return (await import('@/app/components/LottiePlayer')).LottiePlayer;
@@ -76,9 +77,12 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
   return (
     <div
       className={clsx(
-        "w-full relative m-auto flex h-screen overflow-hidden overscroll-none flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between max-md:h-full max-md:min-h-screen",
+        "w-full relative m-auto flex h-screen overflow-hidden overscroll-none flex-col items-center justify-between bg-[url('/images/bg.png')] select-none bg-no-repeat bg-cover max-md:bg-center max-md:justify-between max-md:h-dvh",
+        window.matchMedia('(orientation: landscape)').matches && 'blur-3xl',
       )}
     >
+      <OrientationAlert />
+
       {modalOpen && (
         <Modal
           lang={lang}

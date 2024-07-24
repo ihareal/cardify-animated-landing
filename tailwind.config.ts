@@ -42,6 +42,11 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }: any) {
+      addVariant('portrait', '@media (orientation: portrait)');
+      addVariant('landscape', '@media (orientation: landscape)');
+    },
+  ],
 };
 export default config;
