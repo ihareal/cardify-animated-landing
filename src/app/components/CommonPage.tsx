@@ -191,7 +191,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           <Image
             src={BaseWheel}
             alt='Base Wheel'
-            className='absolute min-w-[475px] min-h-[475px] top-[-47px] pointer-events-none max-md:top-[-35px] max-md:min-w-[342px] max-md:min-h-[342px]'
+            className='absolute z-[11] min-w-[475px] min-h-[475px] top-[-47px] pointer-events-none max-md:top-[-35px] max-md:min-w-[342px] max-md:min-h-[342px]'
           />
         </div>
 
@@ -266,13 +266,13 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         />
       )}
       <LottiePlayer
-        className='z-20 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[-11%] max-md:top-[25%]'
+        className='z-10 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[-11%] max-md:top-[25%]'
         src={FirstDragon}
         loop={true}
         autoplay={true}
       />
       <LottiePlayer
-        className='z-20 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:w-[105.69px] max-md:h-[105.69px] max-md:right-[-7%] max-md:top-[26%]'
+        className='z-10 w-[206.19px] h-[206.19px] absolute top-[80px] right-[130px] max-md:w-[105.69px] max-md:h-[105.69px] max-md:right-[-7%] max-md:top-[26%]'
         src={SecondDragon}
         loop={true}
         autoplay={true}
