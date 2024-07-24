@@ -100,7 +100,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           className='mt-5 pointer-events-none'
         />
         <div
-          className='flex flex-col items-center justify-start uppercase text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%] max-md:mb-5'
+          className='flex flex-col items-center justify-start uppercase text-center font-extrabold text-[#FAF9E0] text-[33px] leading-[37px] italic w-[50%] mt-5 max-md:text-[22px] max-md:leading-[25px] max-md:w-[85%] max-md:mb-10'
           style={{
             color: 'linear-gradient(90deg, #FAF9E0 20%, #FEF7A9 80%)',
           }}
