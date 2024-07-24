@@ -67,7 +67,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
 
       setTimeout(() => {
         setModalOpen(true);
-      }, 5400);
+      }, 7000);
 
       return;
     }
