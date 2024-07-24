@@ -1,4 +1,10 @@
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import Fireworks from '@/assets/animations/lottie/Fireworks.json';
+
+const LottiePlayer = dynamic(async () => {
+  return (await import('@/app/components/LottiePlayer')).LottiePlayer;
+});
 import React from 'react';
 
 export default function Modal({
@@ -13,13 +19,25 @@ export default function Modal({
   const href = 'https://cardify.cloud/auth';
   return (
     <div
-      className='overflow-hidden absolute z-[119] flex flex-col h-full min-h-screen max-h-screen w-full justify-center items-center'
+      className='overflow-hidden absolute z-[119] flex flex-col h-dvh w-full justify-center items-center'
       style={{
         background: 'rgba(0, 0,0, .4)',
       }}
     >
+      <LottiePlayer
+        className='z-50 fixed bottom-[25%] left-[5%] max-md:right-[-5%] max-md:top-[-30%]'
+        src={Fireworks}
+        loop={true}
+        autoplay={true}
+      />
+      <LottiePlayer
+        className='z-50 fixed bottom-[25%] right-[5%] max-md:left-[-5%] max-md:bottom-[5%]'
+        src={Fireworks}
+        loop={true}
+        autoplay={true}
+      />
       <div
-        className='w-[360px] p-5 text-center text-white flex flex-col items-center justify-start rounded-2xl'
+        className='z-[60] relative w-[360px] p-5 text-center text-white flex flex-col items-center justify-start rounded-2xl'
         style={{
           background: 'linear-gradient(180deg, #E50046 0%, #E37A59 100%)',
         }}

@@ -258,22 +258,6 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
         alt='Guitar'
         className='absolute bottom-[-18%] right-[-6%] pointer-events-none max-xl:hidden'
       />
-      {modalOpen && spin !== 2 && (
-        <LottiePlayer
-          className='z-[100] absolute bottom-[25%] left-[5%] max-md:right-[-5%] max-md:top-[-30%]'
-          src={Fireworks}
-          loop={true}
-          autoplay={true}
-        />
-      )}
-      {modalOpen && spin !== 2 && (
-        <LottiePlayer
-          className='z-[100] absolute bottom-[25%] right-[5%] max-md:left-[-5%] max-md:bottom-[5%]'
-          src={Fireworks}
-          loop={true}
-          autoplay={true}
-        />
-      )}
       <LottiePlayer
         className='z-10 w-[193px] h-[193px] absolute top-[207px] left-[91px] max-md:w-[132px] max-md:h-[132px] max-md:left-[-11%] max-md:top-[25%]'
         src={FirstDragon}
