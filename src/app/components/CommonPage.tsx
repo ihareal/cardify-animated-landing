@@ -185,7 +185,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
             />
           )}
           <LottiePlayer
-            className='z-50 w-[150px] h-[150px] active:scale-95 active:ease-in-out active:duration-500 absolute top-[115px] left-[115px] cursor-pointer max-md:w-[120px] max-md:top-[60px] max-md:left-[77.5px]'
+            className='z-50 w-[150px] h-[150px] active:scale-90 active:ease-in-out active:duration-500 absolute top-[115px] left-[115px] cursor-pointer max-md:w-[120px] max-md:top-[60px] max-md:left-[77.5px]'
             src={Spin}
             loop={true}
             autoplay={true}
