@@ -24,7 +24,6 @@ import MasterCard from '@/assets/images/MasterCard.svg';
 import Peace from '@/assets/images/Peace.svg';
 
 import Spin from '@/assets/animations/lottie/Spin.json';
-import Fireworks from '@/assets/animations/lottie/Fireworks.json';
 import FirstDragon from '@/assets/animations/lottie/FirstDragon.json';
 import FirstCircle from '@/assets/animations/lottie/FirstCircle.json';
 import SecondCircle from '@/assets/animations/lottie/SecondCircle.json';
@@ -123,6 +122,7 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
           className={clsx(
             'absolute animate-pulse-one delay-1000 left-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-10 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:left-0 max-md:relative',
             spin < 2 && 'md:hidden max-md:invisible',
+            spin === 4 && 'max-md:invisible max-md:order-10',
           )}
         >
           <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>
@@ -206,8 +206,9 @@ export default function CommonPage({ lang }: { lang: 'en' | 'ru' }) {
 
         <div
           className={clsx(
-            'absolute animate-pulse-one delay-1000 right-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-5 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:right-0 max-md:relative max-md:mb-2',
+            'absolute animate-pulse-one delay-1000 right-[50px] z-30 text-white w-[360px] bg-[linear-gradient(180deg,#E50046_0%,#E37A59_100%)] flex flex-col justify-center items-center gap-5 p-5 rounded-xl max-md:mt-10 max-md:order-2 max-md:flex-row max-md:p-0 max-md:bg-none max-md:gap-2 max-md:w-full max-md:right-0 max-md:relative',
             spin < 4 && 'md:hidden max-md:invisible',
+            spin === 4 && 'max-md:flex max-md:order-2',
           )}
         >
           <h3 className='font-bold text-[20px] leading-[22.6px] text-center max-md:text-[15px] max-md:leading-[17px] max-md:text-wrap'>

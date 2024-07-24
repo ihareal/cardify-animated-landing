@@ -7,7 +7,7 @@ const OrientationAlert = () => {
     const checkOrientation = () => {
       if (
         window.matchMedia('(orientation: landscape)').matches &&
-        window.innerWidth <= 768
+        window.innerWidth <= 1020
       ) {
         alert('Пожалуйста, поверните устройство обратно в портретный режим.');
       }
