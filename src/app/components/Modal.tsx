@@ -42,7 +42,7 @@ export default function Modal({
           background: 'linear-gradient(180deg, #E50046 0%, #E37A59 100%)',
         }}
       >
-        <h2 className='font-semibold text-[33px] leading-[37.29px]'>
+        <h2 className='font-semibold text-[33px] leading-[37.29px] font-halvar'>
           ПОЗДРАВЛЯЕМ!
         </h2>
 
