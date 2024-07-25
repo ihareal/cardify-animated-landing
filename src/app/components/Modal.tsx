@@ -42,7 +42,7 @@ export default function Modal({
           background: 'linear-gradient(180deg, #E50046 0%, #E37A59 100%)',
         }}
       >
-        <h2 className='font-semibold text-[33px] leading-[37.29px] font-halvar'>
+        <h2 className='font-semibold text-[30px] leading-[33.9px] font-halvar'>
           ПОЗДРАВЛЯЕМ!
         </h2>
 
@@ -73,7 +73,6 @@ export default function Modal({
             onClick={handleClose}
             className='z-[130] w-[320px] mt-5 font-bold text-xl leading-[22.6px] cursor-pointer text-center py-4 rounded-lg hover:opacity-90'
             style={{
-              border: '1px solid rgba(229, 0, 70, 1)',
               background:
                 'linear-gradient(180deg, #E50046 50.94%, #7D0F2F 100%)',
             }}
@@ -82,12 +81,7 @@ export default function Modal({
           </button>
         ) : (
           <Link href={href}>
-            <button
-              className='z-[130] bg-white w-[320px] text-[#E50046] mt-8 font-bold text-xl leading-[22.6px] cursor-pointer text-center py-4 rounded-lg hover:opacity-90'
-              style={{
-                border: '1px solid rgba(229, 0, 70, 1)',
-              }}
-            >
+            <button className='z-[130] bg-white w-[320px] text-[#E50046] mt-8 font-bold text-xl leading-[22.6px] cursor-pointer text-center py-4 rounded-lg hover:opacity-90'>
               ЗАБРАТЬ БОНУС
             </button>
           </Link>
